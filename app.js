@@ -9,11 +9,7 @@ const points = document.querySelectorAll('.points');
 
 let pPoints = 0;
 let cPoints = 0;
-
-startGame.addEventListener('click', () => {
-	container.style.display = 'none';
-	containerTwo.style.display = 'flex';
-});
+let isPlaying = false;
 
 const getUserChoice = userInput => {
 	userInput.toLowerCase();
@@ -68,60 +64,122 @@ const determineWinner = (userChoice, computerChoice) => {
 	}
 };
 
-const playGame = () => {
-	options[0].addEventListener('click', e => {
+const rockEvents = e => {
+	isPlaying = true;
+	if (isPlaying) {
+		options[0].removeEventListener('click', rockEvents);
+		options[1].removeEventListener('click', paperEvents);
+		options[2].removeEventListener('click', scissorsEvents);
+		options.forEach(option => {
+			option.style.cursor = 'not-allowed';
+		});
+	}
+	left.src = 'img/rock-left.svg';
+	right.src = 'img/rock-right.svg';
+	left.classList.add('animated', 'bounce');
+	right.classList.add('animated', 'bounce');
+	e.preventDefault();
+	setTimeout(() => {
 		left.src = 'img/rock-left.svg';
-		right.src = 'img/rock-right.svg';
-		left.classList.add('animated', 'bounce');
-		right.classList.add('animated', 'bounce');
-		setTimeout(() => {
-			left.src = 'img/rock-left.svg';
-			const userChoice = getUserChoice('rock');
-			const computerChoice = getComputerChoice();
-			determineWinner(userChoice, computerChoice);
-			points[0].textContent = `Player: ${pPoints}`;
-			points[1].textContent = `${cPoints}: Computer`;
-			left.classList.remove('animated', 'bounce');
-			right.classList.remove('animated', 'bounce');
-			e.preventDefault();
-		}, 1100)
-	});
-	
-	options[1].addEventListener('click', e => {
-		left.src = 'img/rock-left.svg';
-		right.src = 'img/rock-right.svg';
-		left.classList.add('animated', 'bounce');
-		right.classList.add('animated', 'bounce');
-		setTimeout(() => {
-			left.src = 'img/paper-left.svg';
-			const userChoice = getUserChoice('paper');
-			const computerChoice = getComputerChoice();
-			determineWinner(userChoice, computerChoice);
-			points[0].textContent = `Player: ${pPoints}`;
-			points[1].textContent = `${cPoints}: Computer`;
-			left.classList.remove('animated', 'bounce');
-			right.classList.remove('animated', 'bounce');
-			e.preventDefault();
-		}, 1100);
-	});
-	
-	options[2].addEventListener('click', e => {
-		left.src = 'img/rock-left.svg';
-		right.src = 'img/rock-right.svg';
-		left.classList.add('animated', 'bounce');
-		right.classList.add('animated', 'bounce');
-		setTimeout(() => {
-			left.src = 'img/scissors-left.svg';
-			const userChoice = getUserChoice('scissors');
-			const computerChoice = getComputerChoice();
-			determineWinner(userChoice, computerChoice);
-			points[0].textContent = `Player: ${pPoints}`;
-			points[1].textContent = `${cPoints}: Computer`;
-			left.classList.remove('animated', 'bounce');
-			right.classList.remove('animated', 'bounce');
-			e.preventDefault();
-		}, 1100);
-	});
+		const userChoice = getUserChoice('rock');
+		const computerChoice = getComputerChoice();
+		determineWinner(userChoice, computerChoice);
+		points[0].textContent = `Player: ${pPoints}`;
+		points[1].textContent = `${cPoints}: Computer`;
+		left.classList.remove('animated', 'bounce');
+		right.classList.remove('animated', 'bounce');
+		isPlaying = false;
+		if (!isPlaying) {
+			options[0].addEventListener('click', rockEvents);
+			options[1].addEventListener('click', paperEvents);
+			options[2].addEventListener('click', scissorsEvents);
+			options.forEach(option => {
+				option.style.cursor = 'pointer';
+			});
+		}
+	}, 1100);
 };
 
-playGame();
+const paperEvents = e => {
+	isPlaying = true;
+	if (isPlaying) {
+		options[0].removeEventListener('click', rockEvents);
+		options[1].removeEventListener('click', paperEvents);
+		options[2].removeEventListener('click', scissorsEvents);
+		options.forEach(option => {
+			option.style.cursor = 'not-allowed';
+		});
+	}
+	left.src = 'img/rock-left.svg';
+	right.src = 'img/rock-right.svg';
+	left.classList.add('animated', 'bounce');
+	right.classList.add('animated', 'bounce');
+	e.preventDefault();
+	setTimeout(() => {
+		left.src = 'img/paper-left.svg';
+		const userChoice = getUserChoice('paper');
+		const computerChoice = getComputerChoice();
+		determineWinner(userChoice, computerChoice);
+		points[0].textContent = `Player: ${pPoints}`;
+		points[1].textContent = `${cPoints}: Computer`;
+		left.classList.remove('animated', 'bounce');
+		right.classList.remove('animated', 'bounce');
+		isPlaying = false;
+		if (!isPlaying) {
+			options[0].addEventListener('click', rockEvents);
+			options[1].addEventListener('click', paperEvents);
+			options[2].addEventListener('click', scissorsEvents);
+			options.forEach(option => {
+				option.style.cursor = 'pointer';
+			});
+		}
+	}, 1100);
+};
+
+const scissorsEvents = e => {
+	isPlaying = true;
+	if (isPlaying) {
+		options[0].removeEventListener('click', rockEvents);
+		options[1].removeEventListener('click', paperEvents);
+		options[2].removeEventListener('click', scissorsEvents);
+		options.forEach(option => {
+			option.style.cursor = 'not-allowed';
+		});
+	}
+	left.src = 'img/rock-left.svg';
+	right.src = 'img/rock-right.svg';
+	left.classList.add('animated', 'bounce');
+	right.classList.add('animated', 'bounce');
+	e.preventDefault();
+	setTimeout(() => {
+		left.src = 'img/scissors-left.svg';
+		const userChoice = getUserChoice('scissors');
+		const computerChoice = getComputerChoice();
+		determineWinner(userChoice, computerChoice);
+		points[0].textContent = `Player: ${pPoints}`;
+		points[1].textContent = `${cPoints}: Computer`;
+		left.classList.remove('animated', 'bounce');
+		right.classList.remove('animated', 'bounce');
+		isPlaying = false;
+		if (!isPlaying) {
+			options[0].addEventListener('click', rockEvents);
+			options[1].addEventListener('click', paperEvents);
+			options[2].addEventListener('click', scissorsEvents);
+			options.forEach(option => {
+				option.style.cursor = 'pointer';
+			});
+		}
+	}, 1100);
+};
+
+const playGame = () => {
+	options[0].addEventListener('click', rockEvents);
+	options[1].addEventListener('click', paperEvents);
+	options[2].addEventListener('click', scissorsEvents);
+};
+
+startGame.addEventListener('click', () => {
+	container.style.display = 'none';
+	containerTwo.style.display = 'flex';
+	playGame();
+});
