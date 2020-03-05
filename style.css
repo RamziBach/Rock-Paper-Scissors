@@ -26,18 +26,14 @@ h1 { font-size: 4.5rem }
 	flex-direction: column;
 }
 
-.child h1 {
-	text-align: center;
-}
+.child h1 { text-align: center }
 
 .svg {
 	display: flex;
 	justify-content: space-evenly;
 }
 
-.intro-svg {
-	width: 5em;
-}
+.intro-svg { width: 5em }
 
 .start-game-div {
 	align-self: center;
@@ -76,22 +72,16 @@ h1 { font-size: 4.5rem }
 	align-items: center;
 }
 
-.parent2 {
-	width: 35em;
-}
+.parent2 { width: 35em }
 
-.select-option {
-	text-align: center;
-}
+.select-option { text-align: center }
 
 .pc {
 	display: flex;
 	justify-content: space-between;
 }
 
-.pc h2 {
-	margin-top: 0;
-}
+.pc h2 { margin-top: 0 }
 
 .svg2 {
 	display: flex;
@@ -100,10 +90,33 @@ h1 { font-size: 4.5rem }
 
 .starting-hand { width: 13em }
 
-.left {
-	transform: rotate(20deg);
+.left { transform: rotate(20deg) }
+
+.right { transform: rotate(-20deg) }
+
+
+
+
+@media (max-width: 800px) {
+	body { font-size: .875rem }
+	
+	h1 { font-size: 2.7rem }
+	
+	h2 { font-size: 1rem }
+	
+	.hand { margin: 5em .2em }
+	
+	.intro-svg { width: 3em }
+	
+	.starting-hand { width: 10em }
 }
 
-.right {
-	transform: rotate(-20deg);
+@media (max-width: 350px) {
+	body { font-size: .800rem }
+	
+	h1 { font-size: 2rem }
+	
+	h2 { font-size: .875rem }
+	
+	.starting-hand { width: 9em }
 }

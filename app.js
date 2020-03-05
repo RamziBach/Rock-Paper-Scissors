@@ -70,6 +70,8 @@ const determineWinner = (userChoice, computerChoice) => {
 
 const playGame = () => {
 	options[0].addEventListener('click', e => {
+		left.src = 'img/rock-left.svg';
+		right.src = 'img/rock-right.svg';
 		left.classList.add('animated', 'bounce');
 		right.classList.add('animated', 'bounce');
 		setTimeout(() => {
@@ -86,6 +88,8 @@ const playGame = () => {
 	});
 	
 	options[1].addEventListener('click', e => {
+		left.src = 'img/rock-left.svg';
+		right.src = 'img/rock-right.svg';
 		left.classList.add('animated', 'bounce');
 		right.classList.add('animated', 'bounce');
 		setTimeout(() => {
@@ -102,6 +106,8 @@ const playGame = () => {
 	});
 	
 	options[2].addEventListener('click', e => {
+		left.src = 'img/rock-left.svg';
+		right.src = 'img/rock-right.svg';
 		left.classList.add('animated', 'bounce');
 		right.classList.add('animated', 'bounce');
 		setTimeout(() => {
