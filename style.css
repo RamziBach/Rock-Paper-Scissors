@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after { box-sizing: border-box }
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	margin: 0;
+	padding: 0;
+	line-height: 1.6;
+}
+
+.container {
+	width: 90%;
+	margin: 0 auto;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 { font-size: 4.5rem }
+
+.parent1 {
+	display: flex;
+	flex-direction: column;
+}
+
+.child h1 {
+	text-align: center;
+}
+
+.svg {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.intro-svg {
+	width: 5em;
+}
+
+.start-game-div {
+	align-self: center;
+	display: flex;
+	justify-content: center;
+}
+
+.start-game,
+.hand {
+	display: inline-block;
+	margin: 5em 1em;
+	text-decoration: none;
+	color: white;
+	background-color: black;
+	padding: 1em 2em;
+	border-radius: 5px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.start-game:hover,
+.hand:hover {
+	transform: translate(0, -5px);
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+
+
+.container2 {
+	width: 90%;
+	margin: 0 auto;
+	height: 100vh;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.parent2 {
+	width: 35em;
+}
+
+.select-option {
+	text-align: center;
+}
+
+.pc {
+	display: flex;
+	justify-content: space-between;
+}
+
+.pc h2 {
+	margin-top: 0;
+}
+
+.svg2 {
+	display: flex;
+	justify-content: space-between;
+}
+
+.starting-hand { width: 13em }
+
+.left {
+	transform: rotate(20deg);
+}
+
+.right {
+	transform: rotate(-20deg);
+}
