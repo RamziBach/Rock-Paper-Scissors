@@ -84,7 +84,7 @@ const playGame = () => {
 			left.classList.remove('animated', 'bounce');
 			right.classList.remove('animated', 'bounce');
 			e.preventDefault();
-		}, 1000)
+		}, 1100)
 	});
 	
 	options[1].addEventListener('click', e => {
@@ -102,7 +102,7 @@ const playGame = () => {
 			left.classList.remove('animated', 'bounce');
 			right.classList.remove('animated', 'bounce');
 			e.preventDefault();
-		}, 1000);
+		}, 1100);
 	});
 	
 	options[2].addEventListener('click', e => {
@@ -120,7 +120,7 @@ const playGame = () => {
 			left.classList.remove('animated', 'bounce');
 			right.classList.remove('animated', 'bounce');
 			e.preventDefault();
-		}, 1000);
+		}, 1100);
 	});
 };
 
