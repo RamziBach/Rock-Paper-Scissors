@@ -97,7 +97,7 @@ const rockEvents = e => {
 				option.style.cursor = 'pointer';
 			});
 		}
-	}, 1100);
+	}, 600);
 };
 
 const paperEvents = e => {
@@ -133,7 +133,7 @@ const paperEvents = e => {
 				option.style.cursor = 'pointer';
 			});
 		}
-	}, 1100);
+	}, 600);
 };
 
 const scissorsEvents = e => {
@@ -169,7 +169,7 @@ const scissorsEvents = e => {
 				option.style.cursor = 'pointer';
 			});
 		}
-	}, 1100);
+	}, 600);
 };
 
 const playGame = () => {
