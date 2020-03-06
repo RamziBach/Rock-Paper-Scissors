@@ -80,7 +80,6 @@ const rockEvents = e => {
 	right.classList.add('animated', 'bounce');
 	e.preventDefault();
 	setTimeout(() => {
-		left.src = 'img/rock-left.svg';
 		const userChoice = getUserChoice('rock');
 		const computerChoice = getComputerChoice();
 		determineWinner(userChoice, computerChoice);
@@ -88,6 +87,7 @@ const rockEvents = e => {
 		points[1].textContent = `${cPoints}: Computer`;
 		left.classList.remove('animated', 'bounce');
 		right.classList.remove('animated', 'bounce');
+		left.src = 'img/rock-left.svg';
 		isPlaying = false;
 		if (!isPlaying) {
 			options[0].addEventListener('click', rockEvents);
@@ -116,7 +116,6 @@ const paperEvents = e => {
 	right.classList.add('animated', 'bounce');
 	e.preventDefault();
 	setTimeout(() => {
-		left.src = 'img/paper-left.svg';
 		const userChoice = getUserChoice('paper');
 		const computerChoice = getComputerChoice();
 		determineWinner(userChoice, computerChoice);
@@ -124,6 +123,7 @@ const paperEvents = e => {
 		points[1].textContent = `${cPoints}: Computer`;
 		left.classList.remove('animated', 'bounce');
 		right.classList.remove('animated', 'bounce');
+		left.src = 'img/paper-left.svg';
 		isPlaying = false;
 		if (!isPlaying) {
 			options[0].addEventListener('click', rockEvents);
@@ -152,7 +152,6 @@ const scissorsEvents = e => {
 	right.classList.add('animated', 'bounce');
 	e.preventDefault();
 	setTimeout(() => {
-		left.src = 'img/scissors-left.svg';
 		const userChoice = getUserChoice('scissors');
 		const computerChoice = getComputerChoice();
 		determineWinner(userChoice, computerChoice);
@@ -160,6 +159,7 @@ const scissorsEvents = e => {
 		points[1].textContent = `${cPoints}: Computer`;
 		left.classList.remove('animated', 'bounce');
 		right.classList.remove('animated', 'bounce');
+		left.src = 'img/scissors-left.svg';
 		isPlaying = false;
 		if (!isPlaying) {
 			options[0].addEventListener('click', rockEvents);
