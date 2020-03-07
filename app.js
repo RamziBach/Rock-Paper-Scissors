@@ -13,7 +13,20 @@ let isPlaying = false;
 
 const getUserChoice = userInput => {
 	userInput.toLowerCase();
-	if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') return userInput;
+	switch (userInput) {
+		case 'rock':
+			left.src = 'img/rock-left.svg';
+			return userInput;
+			break;
+		case 'paper':
+			left.src = 'img/paper-left.svg';
+			return userInput;
+			break;
+		case 'scissors':
+			left.src = 'img/scissors-left.svg';
+			return userInput;
+			break;
+	}
 };
 
 const getComputerChoice = () => {
@@ -87,7 +100,6 @@ const rockEvents = e => {
 		points[1].textContent = `${cPoints}: Computer`;
 		left.classList.remove('animated', 'bounce');
 		right.classList.remove('animated', 'bounce');
-		left.src = 'img/rock-left.svg';
 		isPlaying = false;
 		if (!isPlaying) {
 			options[0].addEventListener('click', rockEvents);
@@ -97,7 +109,7 @@ const rockEvents = e => {
 				option.style.cursor = 'pointer';
 			});
 		}
-	}, 600);
+	}, 1000);
 };
 
 const paperEvents = e => {
@@ -123,7 +135,6 @@ const paperEvents = e => {
 		points[1].textContent = `${cPoints}: Computer`;
 		left.classList.remove('animated', 'bounce');
 		right.classList.remove('animated', 'bounce');
-		left.src = 'img/paper-left.svg';
 		isPlaying = false;
 		if (!isPlaying) {
 			options[0].addEventListener('click', rockEvents);
@@ -133,7 +144,7 @@ const paperEvents = e => {
 				option.style.cursor = 'pointer';
 			});
 		}
-	}, 600);
+	}, 1000);
 };
 
 const scissorsEvents = e => {
@@ -159,7 +170,6 @@ const scissorsEvents = e => {
 		points[1].textContent = `${cPoints}: Computer`;
 		left.classList.remove('animated', 'bounce');
 		right.classList.remove('animated', 'bounce');
-		left.src = 'img/scissors-left.svg';
 		isPlaying = false;
 		if (!isPlaying) {
 			options[0].addEventListener('click', rockEvents);
@@ -169,7 +179,7 @@ const scissorsEvents = e => {
 				option.style.cursor = 'pointer';
 			});
 		}
-	}, 600);
+	}, 1000);
 };
 
 const playGame = () => {
